@@ -1,0 +1,5 @@
+# Docker run without volumes attached
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<STRONG_PASSWORD>" -e "MSSQL_PID=Enterprise" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest   
+
+# Docker run with volumes attached
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<STRONG_PASSWORD>" -e "MSSQL_PID=Enterprise" -p 1433:1433 -v "C:/Users/Abinav Ramesh/OneDrive/Bell Files/Learnings/ms_sql_server_docker/data":/var/opt/mssql/data -v "C:/Users/Abinav Ramesh/OneDrive/Bell Files/Learnings/ms_sql_server_docker/log":/var/opt/mssql/log -v "C:/Users/Abinav Ramesh/OneDrive/Bell Files/Learnings/ms_sql_server_docker/secrets":/var/opt/mssql/secrets -d mcr.microsoft.com/mssql/server:2019-latest
